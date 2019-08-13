@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="'layout/LayoutPadrao'">
+	
+<head>
+	<title>Cadastro de Classe</title>
+</head>
+
+<body>
+	<section layout:fragment="conteudo">
+
+		<div class="page-header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-10">
+					<h1>Inserir Classes</h1>
+				</div>
+				
+				<div class="col-sm-2">
+					<div class="aw-page-header-controls">
+						<a class="btn  btn-default" th:href="@{/allGrades}">
+							<i class="glyphicon  glyphicon-plus-sign"></i> <span class="hidden-xs  hidden-sm">Pesquisar</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<div class="container-fluid">
+
+			<th:block th:include="fragments/MensagemSucesso"></th:block>
+
+			<form id="form-grade"  method="POST" th:object="${grade}"
+				class="form-vertical  js-form-loading">
+				<th:block th:include="fragments/MensagensErroValidacao"></th:block>
+
+				<div class="row">
+
+					<div>
+						<div class="col-sm-2  form-group">
+							<label for="description">Descricao: </label> <input
+								id="description" name="description" th:field="*{description}"
+								class="form-control" onKeyUp="typewatch('cb(3)', 3000  );">
+						</div>
+						<div class="col-sm-2  form-group">
+							<label for="price">Preco:</label> <input id="price" name="price"
+								th:field="*{price}" class="form-control">
+						</div>
+						<div class="col-sm-2  form-group">
+							<label for="awaitedvalue">Esperado:</label> <input
+								id="awaitedvalue" name="awaitedvalue" th:field="*{awaitedvalue}"
+								class="form-control">
+						</div>
+						<br>
+
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<button class="btn  btn-primary" type="submit">Salvar</button>
+				</div>
+
+			</form>
+		</div>
+
+	</section>
+	
+			<th:block layout:fragment="javascript-extra">
+					<script th:src="@{/javascripts/academic/gradee.js}"></script>
+					<script th:src="@{/layout/javascripts/vendors/jquery/jquery.js}"></script>
+					<script th:src="@{/javascripts/vendors/jquery.maskMoney.min.js}"></script>
+			</th:block>
+</body>
+</html>

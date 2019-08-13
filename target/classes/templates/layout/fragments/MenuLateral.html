@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<aside class="aw-layout-sidebar  js-sidebar"
+		th:fragment="layout-sidebar">
+		<div class="aw-layout-sidebar__content">
+
+			<nav class="aw-menu  js-menu">
+				<ul class="aw-menu__list">
+
+					<li class="aw-menu__item"><a href="#"><i
+							class="fa  fa-fw  fa-home"></i><span>Dashboard</span></a></li>
+
+					<li class="aw-menu__item  "><a href="#"> <i
+							class="fa  fa-fw  fa-home"></i><span style="color: black">Academico</span>
+							<i class="aw-menu__navigation-icon  fa"></i>
+					</a> <!--           			<ul class="aw-menu__list  aw-menu__list--sublist"> -->
+						<!-- 			            <li class="aw-menu__item  aw-menu__item--link"><a >Cadastro de produto</a></li> -->
+						<!-- 			            <li class="aw-menu__item  aw-menu__item--link  is-active"><a>Pesquisa de produtos</a></li> -->
+						<!-- 			            <li class="aw-menu__item  aw-menu__item--link"><a >Tabela sem dados</a></li> -->
+						<!--           			</ul> --></li>
+					<li class="aw-menu__item  "><a href="#"> <i
+							class="fa  fa-fw  fa-home"></i><span>Matriculas_Grade_Teste</span> <i
+							class="aw-menu__navigation-icon  fa"></i>
+					</a>
+
+						<ul class="aw-menu__list  aw-menu__list--sublist">
+							<li class="aw-menu__item  aw-menu__item--link"><a
+								th:href="@{/grade/new}">Grade_Teste</a></li>
+							<li class="aw-menu__item  aw-menu__item--link  is-active"><a>Relatorio
+									Matriculados</a></li>
+						</ul></li>
+
+
+					<li class="aw-menu__item"><a href="#"> <i
+							class="menu-icon glyphicon glyphicon-usd"></i><span
+							style="color: black">Tesoureiro</span> <i
+							class="aw-menu__navigation-icon  fa"></i>
+					</a>
+
+						<ul class="aw-menu__list  aw-menu__list--sublist">
+							<li class="aw-menu__item  aw-menu__item--link"><a
+								>Pagamentos</a></li>
+							<li class="aw-menu__item  aw-menu__item--link  is-active"><a
+								>Relatorio Pagamentos</a></li>
+
+							<li class="aw-menu__item  aw-menu__item--link"><a>Extracto
+							</a>
+							</li>
+						</ul></li>
+
+
+					
+				</ul>
+			</nav>
+		</div>
+	</aside>
+</body>
+</html>

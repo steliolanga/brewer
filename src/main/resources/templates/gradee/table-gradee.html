@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="'layout/LayoutPadrao'"
+	xmlns:brewer="http://brewer.algaworks.com">
+
+<head>
+<title>Pesquisa de grades</title>
+</head>
+
+<body>
+	<section layout:fragment="conteudo">
+		<div class="page-header">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-10">
+						<h1>Pesquisar Classes</h1>
+					</div>
+
+					<div class="col-sm-2">
+						<div class="aw-page-header-controls">
+							<a class="btn  btn-default" th:href="@{/grade/new}"> <i
+								class="glyphicon  glyphicon-plus-sign"></i> <span
+								class="hidden-xs  hidden-sm">Nova Classe</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+
+
+
+			<button type="button" class="btn  btn-primary">Pesquisar</button>
+<br><br>
+<br>
+<br>
+
+			<div class="table-responsive  bw-tabela-simples">
+				<table class="table  table-hover">
+					<thead>
+						<tr>
+							<th >Descricao</th>
+							<th >Price</th>
+							<th >Valor Esperado</th>
+							<th >Accoes</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="grade : ${grades}">
+
+							<td th:text="${grade.description}"></td>
+							<td th:text="|Mt ${grade.price}|"></td>
+							<td th:text="${grade.awaitedvalue}"></td>
+							<td ><a class="btn  btn-link  btn-xs"
+								title="Editar"> <i class="glyphicon glyphicon-pencil"></i>
+							</a> <a class="btn  btn-link  btn-xs" title="Excluir"> <i
+									class="glyphicon glyphicon-remove"></i>
+							</a></td>
+						</tr>
+						<tr th:if="${#lists.isEmpty(grades)}">
+							<td colspan="7">Nenhuma grade encontrada</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+
+	</section>
+</body>
+</html>
